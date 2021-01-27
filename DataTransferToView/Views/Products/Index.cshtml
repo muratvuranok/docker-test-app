@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DataTransferToView.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row mt-5">
+    <div class="col shadow-sm"> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>  
+                      @Html.DisplayNameFor(model => model.ProductID) 
+                    </th>
+                    <th> 
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th> 
+                        @Html.DisplayNameFor(model => model.UnitPrice)
+                    </th>
+                    <th> 
+                        @Html.DisplayNameFor(model => model.UnitsInstock)
+                    </th>
+                    <th> 
+                        @Html.DisplayNameFor(model => model.UnitsInstock)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Select((x, y) => (x, y)))
+                {
+                    <tr class="@(item.y %2 == 0 ? "bg-light":"")">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.x.ProductID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.x.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.x.UnitPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.x.UnitsInstock)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.x.CategoryID)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

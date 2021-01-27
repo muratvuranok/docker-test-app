@@ -1,0 +1,27 @@
+language: csharp
+mono: none
+dotnet: 5.0
+solution: DataTransferToView.sln
+
+branches:
+  only:
+    - master 
+
+install:
+  - dotnet restore
+
+before_script:
+  - ./scripts/begin.sh
+
+script:
+  - ./scripts/current.sh
+
+after_script:
+  - ./scripts/end.sh
+
+
+notification:
+  email:
+    on_success: always
+    on_failure: always
+ 

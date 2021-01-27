@@ -1,0 +1,1 @@
+echo "Travis işlemlere başlıyor !!!"
