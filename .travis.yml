@@ -17,10 +17,10 @@ before_script:
 
 script:
   - ./scripts/current.sh
-  - dotnet publish --configuration Release --runtime win-x64      /p:PublishSingleFile  --output win-x64
-  - dotnet publish --configuration Release --runtime win-x86      /p:PublishSingleFile  --output win-x86
-  - dotnet publish --configuration Release --runtime linux-x64    /p:PublishSingleFile  --output linux-x64
-  - dotnet publish --configuration Release --runtime osx-x64      /p:PublishSingleFile  --output osx-x64
+  - dotnet publish --configuration Release --runtime win-x64      /p:PublishSingleFile=false  --output win-x64
+  - dotnet publish --configuration Release --runtime win-x86      /p:PublishSingleFile=false  --output win-x86
+  - dotnet publish --configuration Release --runtime linux-x64    /p:PublishSingleFile=false --output linux-x64
+  - dotnet publish --configuration Release --runtime osx-x64      /p:PublishSingleFile=false  --output osx-x64
 
 after_script:
   - ./scripts/end.sh
